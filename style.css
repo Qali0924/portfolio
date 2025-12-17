@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;500;700&display=swap');
 
-/* Podstawowe style - naprawiono duplikaty i błędne zagnieżdżenia */
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +16,6 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/* Czcionka "Press Start 2P" tylko dla wybranych elementów (lepsza czytelność akapitów) */
 h1, h2, .logo, .contact-card h3, .copy-notification, .lang-btn, .cta {
     font-family: 'Press Start 2P', cursive;
 }
@@ -114,7 +112,7 @@ h1, h2, .logo, .contact-card h3, .copy-notification, .lang-btn, .cta {
     opacity: 0.8;
 }
 
-/* O MNIE - stylizacja tekstu */
+/* O MNIE */
 #about p {
     color: #a0e7ff;
     font-weight: 500;
@@ -125,7 +123,7 @@ h1, h2, .logo, .contact-card h3, .copy-notification, .lang-btn, .cta {
         0 0 2px #a0e7ff;
 }
 
-/* KARUZELA PROJEKTÓW - dostosowana do obrazów, usunięte duplikaty */
+/* 🎯 KARUZELA - POPRAWIONA DLA WYŻSZYCH OBRAZÓW */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -134,6 +132,8 @@ h1, h2, .logo, .contact-card h3, .copy-notification, .lang-btn, .cta {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 350px; /* Minimalna wysokość kontenera - dopasuj do swojej wysokości obrazów */
+    padding: 20px 0; /* Dodatkowa przestrzeń góra/dół aby obraz nie był przycięty */
 }
 
 .carousel {
@@ -144,6 +144,7 @@ h1, h2, .logo, .contact-card h3, .copy-notification, .lang-btn, .cta {
     justify-content: center;
 }
 
+/* Wszystkie elementy karuzeli mają taką samą minimalną wysokość dla wyrównania */
 .carousel-item {
     flex: 0 0 200px;
     margin: 0 10px;
@@ -152,24 +153,27 @@ h1, h2, .logo, .contact-card h3, .copy-notification, .lang-btn, .cta {
     transition: 0.5s;
     display: flex;
     justify-content: center;
+    min-height: 250px; /* Dopasuj do połowy wysokości aktywnego obrazu */
 }
 
-/* Stylizacja obrazów tak samo jak poprzednich filmów */
+/* Styl obrazów z możliwością ustawienia dowolnej wysokości */
 .carousel-item img {
     width: 100%;
-    height: auto; /* Zachowuje proporcje obrazów */
+    height: 300px; /* TU USTAW POŻĄDANĄ WYSOKOŚĆ OBRAZÓW */
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    object-fit: cover; /* Dopasowuje obraz do kontenera bez zniekształceń */
+    object-fit: cover; /* Zachowuje proporcje bez zniekształceń (bez przycinania użyj contain zamiast cover) */
 }
 
+/* Aktywny element - dostosowany aby nie był przycięty */
 .carousel-item.active {
-    flex: 0 0 400px;
-    transform: scale(1) translateY(-20px);
+    flex: 0 0 400px; /* Szerokość aktywnego obrazu - możesz też ją zmienić */
+    min-height: 300px; /* Taka sama wysokość jak obraz */
+    transform: scale(1) translateY(-10px); /* Zmniejszone podniesienie aby nie wyjść poza kontener */
     opacity: 1;
 }
 
-/* STRZAŁKI KARUZELI */
+/* 🎯 STRZAŁKI - ZAWSZE WYŚRODKOWANE PIONOWO */
 .arrow {
     background: rgba(76,201,240,0.7);
     border: none;
@@ -180,6 +184,9 @@ h1, h2, .logo, .contact-card h3, .copy-notification, .lang-btn, .cta {
     border-radius: 50%;
     z-index: 2;
     transition: 0.3s;
+    position: absolute;
+    top: 50%; /* Wyrównanie do środka wysokości kontenera */
+    transform: translateY(-50%); /* Dokładne wyśrodkowanie pionowe */
 }
 
 .arrow:hover {
@@ -187,12 +194,10 @@ h1, h2, .logo, .contact-card h3, .copy-notification, .lang-btn, .cta {
 }
 
 .arrow.left {
-    position: absolute;
     left: -50px;
 }
 
 .arrow.right {
-    position: absolute;
     right: -50px;
 }
 
@@ -257,7 +262,7 @@ h1, h2, .logo, .contact-card h3, .copy-notification, .lang-btn, .cta {
     box-shadow: 0 0 30px rgba(76,201,240,0.4);
 }
 
-/* TOOLTIP PRZY KARTACH KONTAKTU */
+/* TOOLTIP */
 .tooltip {
     position: absolute;
     bottom: 130%;
@@ -346,8 +351,3 @@ footer {
     text-align: center;
     opacity: 0.5;
 }
-
-
-
-
-
