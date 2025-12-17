@@ -165,7 +165,6 @@ h1, h2, .logo, .contact-card h3, .copy-notification, .lang-btn, .cta {
 
 .carousel-item.active {
     flex: 0 0 400px;
-    min-height: 350px;
     transform: scale(1) translateY(-20px);
     opacity: 1;
 }
@@ -347,6 +346,7 @@ footer {
     text-align: center;
     opacity: 0.5;
 }
+
 
 
 
