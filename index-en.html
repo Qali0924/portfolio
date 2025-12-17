@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PORTOLIO | QALI DEV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- AOS CSS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="nav" data-aos="fade-down">
+    <button class="lang-btn" onclick="changeLanguage()">EN / PL</button>
+    <nav>
+        <a href="#about">ABOUT ME</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+</header>
+
+<section class="hero" data-aos="fade-up">
+    <h1>PROFESSIONAL <span>DEVELOPER</span></h1>
+    <p>MINECRAFT PLUGINS • WEBSITES • DISCORD BOTS</p>
+
+    <div class="stats">
+        <div><h2>+10</h2><span>Projects</span></div>
+        <div><h2>3+</h2><span>Years learning</span></div>
+        <div><h2>24/7</h2><span>Passion</span></div>
+    </div>
+
+    <button class="cta" onclick="scrollToSection('projects')">
+        SEE PROJECTS
+    </button>
+</section>
+
+<section id="about" class="section" data-aos="fade-up">
+    <h2>ABOUT ME</h2>
+    <p>
+        I AM A YOUNG DEVELOPER CREATING
+        <strong>MINECRAFT PLUGINS</strong>, <strong>WEBSITES</strong>,
+        AND <strong>DISCORD BOTS</strong>.
+        I FOCUS ON CLEAN CODE, FUNCTIONALITY, AND MODERN DESIGN.
+    </p>
+</section>
+
+<section id="projects" class="section" data-aos="fade-up">
+    <h2>PROJECTS</h2>
+
+    <div class="carousel-container">
+        <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+
+        <div class="carousel">
+            <div class="carousel-item active">
+                <video src="videos/video1.mp4" controls></video>
+            </div>
+            <div class="carousel-item">
+                <video src="videos/video2.mp4" controls></video>
+            </div>
+            <div class="carousel-item">
+                <video src="videos/video3.mp4" controls></video>
+            </div>
+            <!-- Add more videos in the /videos folder -->
+        </div>
+
+        <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+    </div>
+</section>
+
+<section id="contact" class="section" data-aos="fade-up">
+    <h2>CONTACT</h2>
+    <div class="contact-cards">
+        <div class="contact-card" onclick="copyText('qali09')">
+            <h3>DISCORD</h3>
+            <p>qali09</p>
+            <span class="tooltip">CLICK TO COPY</span>
+        </div>
+        <div class="contact-card" onclick="copyText('qali09@op.pl')">
+            <h3>EMAIL</h3>
+            <p>qali09@op.pl</p>
+            <span class="tooltip">CLICK TO COPY</span>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    © 2025 | QALI DEV
+</footer>
+
+<script src="script.js"></script>
+<!-- Copy notification -->
+<div id="copyNotification" class="copy-notification">COPIED!</div>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+<div class="bg-shapes">
+    <span class="rect r1"></span>
+    <span class="rect r2"></span>
+    <span class="rect r3"></span>
+    <span class="rect r4"></span>
+    <span class="rect r5"></span>
+</div>
+
+</body>
+</html>
